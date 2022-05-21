@@ -75,6 +75,7 @@ export default function Main(){
             window.sessionStorage.setItem("token", token)
         }
 
+        console.log(token)
         setToken(token)
 
     }, [])

@@ -84,7 +84,7 @@ export default function SearchTrack(props){
             window.location.hash = ""
             window.sessionStorage.setItem("token", token)
         }
-
+        console.log(token)
         setToken(token)
 
     }, [])

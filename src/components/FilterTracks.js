@@ -51,7 +51,6 @@ export default function FilterTracks(props){
             props.seeds[1].artists[0].id
         }   
 
-        console.log("done parsing in filter")
         fetch(('https://api.spotify.com/v1/recommendations?' + new URLSearchParams({
             seed_artists: artists,
             seed_genres: gen,

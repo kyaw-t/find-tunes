@@ -50,6 +50,8 @@ export default function Seed(props){
             window.sessionStorage.setItem("token", token)
         }
 
+        console.log(token)
+
         setToken(token)
         setLoaded(false)
 
