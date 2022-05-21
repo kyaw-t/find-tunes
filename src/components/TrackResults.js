@@ -13,7 +13,8 @@ export default function TrackResults(props){
 
         <div className="scrollA" style={{
             paddingTop:"0.2rem",
-            paddingBottom:"0.2rem"
+            paddingBottom:"0.2rem",
+            width:"100%"
             }}>
             
         
