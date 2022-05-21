@@ -104,7 +104,7 @@ export default function Main(){
                     </>
                 }
             </div>
-            <SeedList seeds={seeds} callback={cbRemoveSeed}/>
+            {seeds.length != 0 && <SeedList seeds={seeds} callback={cbRemoveSeed}/>}
             <br/>
             <Group position='center'>
             {/* <Divider 
