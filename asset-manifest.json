@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/spot-tempo/static/css/main.622cec47.css",
-    "main.js": "/spot-tempo/static/js/main.1a3a042a.js",
-    "index.html": "/spot-tempo/index.html",
-    "main.622cec47.css.map": "/spot-tempo/static/css/main.622cec47.css.map",
-    "main.1a3a042a.js.map": "/spot-tempo/static/js/main.1a3a042a.js.map"
+    "main.css": "/beatify/static/css/main.622cec47.css",
+    "main.js": "/beatify/static/js/main.1a3a042a.js",
+    "index.html": "/beatify/index.html",
+    "main.622cec47.css.map": "/beatify/static/css/main.622cec47.css.map",
+    "main.1a3a042a.js.map": "/beatify/static/js/main.1a3a042a.js.map"
   },
   "entrypoints": [
     "static/css/main.622cec47.css",
