@@ -19,7 +19,6 @@ export default function FilterTracks(props){
     }
 
     function getGenre(){
-        console.log(genre)
         if (props.seeds.length === 0){
             return
         }
@@ -32,7 +31,6 @@ export default function FilterTracks(props){
         })
             .then(r => r.json())
             .then(r => {
-                // console.log(r)
                 setGenre(r.genres)
             })
             .catch(err => console.log(err))
