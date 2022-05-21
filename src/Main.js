@@ -6,13 +6,14 @@ import TrackResults from './components/TrackResults';
 import { X } from 'tabler-icons-react';
 import SeedList from './components/SeedList';
 import FilterTracks from './components/FilterTracks';
+import {Buffer} from 'buffer';
 
 
 
 const CLIENT_ID = "1cf62b1f664c480eafd55d57ba23412f"
 const CLIENT_SECRET = "0e147b868881436e955241139151f3ee"
-// const REDIRECT_URI = "http://localhost:3000/"
-const REDIRECT_URI = "https://kyaw-t.github.io/spot-tempo"
+const REDIRECT_URI = "http://localhost:3000/"
+// const REDIRECT_URI = "https://kyaw-t.github.io/spot-tempo"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
 
@@ -64,22 +65,71 @@ export default function Main(){
 
     }
 
+    // useEffect(() => {
+    //     const hash = window.location.hash
+    //     let token = window.sessionStorage.getItem("token")
+
+    //     if (hash) {
+    //         token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+
+    //         window.location.hash = ""
+    //         window.sessionStorage.setItem("token", token)
+    //     }
+
+    //     console.log(token)
+    //     setToken(token)
+
+    // }, [])
+    
     useEffect(() => {
-        const hash = window.location.hash
-        let token = window.sessionStorage.getItem("token")
 
-        if (hash) {
-            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+        // const BASE_URL = 'https://accounts.spotify.com/api/token';
+        // fetch(BASE_URL, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded',
+        //         Authorization: 'Basic ' + Buffer.from(CLIENT_ID + ':' + CLIENT_SECRET).toString('base64') 
 
-            window.location.hash = ""
-            window.sessionStorage.setItem("token", token)
-        }
+        //     },
+        //     body: JSON.stringify({grant_type:"client_credentials"})
+        // })
+        // // fetch(('https://accounts.spotify.com/api/token?grant_type=client_credentials'), {
+        // //     method: 'POST',
+        // //     dataType: 'json',
+        // //     headers: {
+        // //         // Authorization: `Basic ${CLIENT_ID}:${CLIENT_SECRET}`,
+        // //         Authorization: 'Basic ' + Buffer.from(CLIENT_ID + ':' + CLIENT_SECRET).toString('base64') 
+        // //     },
+        // // })
+        //     // .then(r => r.json())
+        //     .then(r => {
+        //         console.log(r)
+        //     })
+        //     .catch(err => console.log(err))
 
-        console.log(token)
-        setToken(token)
+            let myHeaders = new Headers();
+            myHeaders.append("Authorization", `Basic ${CLIENT_ID}:${CLIENT_SECRET}`);
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+            var urlencoded = new URLSearchParams();
+            urlencoded.append("grant_type", "client_credentials");
+
+            const requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: urlencoded,
+                redirect: 'follow'
+            }
+            
+            fetch("https://accounts.spotify.com/api/token", requestOptions)
+            .then(r =>{
+                console.log(r)
+            })
+
 
     }, [])
-    
+
+
     return(
         <div className='App-col'>
             <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
@@ -110,10 +160,7 @@ export default function Main(){
             {seeds.length != 0 && <SeedList seeds={seeds} callback={cbRemoveSeed}/>}
             <br/>
             <Group position='center'>
-            {/* <Divider 
-                style={{width:"90%"}}
-                size="md" variant='solid' 
-            /> */}
+
             </Group>
             {
                     showQ &&

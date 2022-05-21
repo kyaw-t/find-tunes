@@ -47,6 +47,7 @@ export default function Track(props){
             window.sessionStorage.setItem("token", token)
         }
 
+        console.log(token)
         setToken(token)
         getPreview()
 
