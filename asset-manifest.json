@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/spot-tempo/static/css/main.c222b396.css",
-    "main.js": "/spot-tempo/static/js/main.4f43182a.js",
+    "main.js": "/spot-tempo/static/js/main.f73d6336.js",
     "index.html": "/spot-tempo/index.html",
     "main.c222b396.css.map": "/spot-tempo/static/css/main.c222b396.css.map",
-    "main.4f43182a.js.map": "/spot-tempo/static/js/main.4f43182a.js.map"
+    "main.f73d6336.js.map": "/spot-tempo/static/js/main.f73d6336.js.map"
   },
   "entrypoints": [
     "static/css/main.c222b396.css",
-    "static/js/main.4f43182a.js"
+    "static/js/main.f73d6336.js"
   ]
 }
