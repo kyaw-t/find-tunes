@@ -81,7 +81,9 @@ export default function Main(){
     
     return(
         <div className='App-col'>
-            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
+            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
+                Login to Spotify112
+            </a>
 
             <SearchTrack callback={cbSearchTrack}/>
             <div className='scroll'> 
@@ -118,7 +120,7 @@ export default function Main(){
                     <FilterTracks seeds={seeds} callback={cbFilterTrack}/>
                     <div className='scroll' style={{width:"75%"}}> 
                         { showF &&
-                            <div>
+                            <div style={{marginTop:"-20px"}}>
                                 <Group position="right">
                                     <Button 
                                         onClick={()=> {setShowF(false)}}
