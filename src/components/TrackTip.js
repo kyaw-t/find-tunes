@@ -54,7 +54,7 @@ export default function TrackTip(props){
 
         </Group>
 
-        {props.loaded && 
+        
         <Group>
             <div className="track-text">
                 <Text weight={600}>Popularity:</Text>
@@ -65,7 +65,7 @@ export default function TrackTip(props){
                 <Text weight={600}>Cheerfulness:</Text>
                 <Text weight={600}>Tempo:</Text>
             </div>
-
+            {props.loaded && 
             <div className="track-text">
                 {
                     scales.map(data => {
@@ -76,6 +76,7 @@ export default function TrackTip(props){
                                     backgroundImage: data[2],
                                     backgroundClip: "text",
                                     color: "transparent",
+                                    WebkitBackgroundClip: "text",
                                 }}
                             >
                                 {data[0]}
@@ -83,17 +84,10 @@ export default function TrackTip(props){
                         )
                     })
                 }
-                {/* <Text weight={600}>{scales[0]}</Text>
-                <Text weight={600}>{props.analysis.danceability}</Text>
-                <Text weight={600}>{props.analysis.energy}</Text>
-                <Text weight={600}>{props.analysis.speechiness}</Text>
-                <Text weight={600}>{props.analysis.acousticness}</Text>
-                <Text weight={600}>{props.analysis.valence}</Text>
-                <Text weight={600}>{props.analysis.tempo}</Text> */}
 
             </div>
+            }
         </Group>
-        }
 
         </div>
         );

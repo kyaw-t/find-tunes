@@ -7,12 +7,13 @@ import { MantineProvider } from '@mantine/core';
 export default function App() {
 
     return(
+        <div className='App-bg'>
         <MantineProvider theme={{ colorScheme: 'dark' }} 
             withGlobalStyles withNormalizeCSS>
-        <div className='App-bg'>
             <Main/>
-        </div>
         </MantineProvider>
+        </div>
+
     );
 
 }

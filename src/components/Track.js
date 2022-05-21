@@ -16,15 +16,18 @@ export default function Track(props){
     }
 
     const getPreview = () => {
-        fetch(('https://api.spotify.com/v1/tracks/' + props.track.id), {
+        fetch((`https://api.spotify.com/v1/tracks/'${props.track.id}?market=US`), {
                 method: 'GET',
                 dataType: 'json',
                 headers: {
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${props.token}`
                 }
             })
                 .then(r => r.json())
                 .then(r => {
+                    if(r.preview_url != null){
+                        console.log("bruhhh")
+                    }
                     setPreview(r.preview_url)
                 })
                 .catch(err => console.log(err))
@@ -32,24 +35,11 @@ export default function Track(props){
 
     useEffect(() => {
         
-        if (props.track.preview_url != null){
+        if (props.track.preview_url === null){
+            getPreview()
+        }else{
             setPreview(props.track.preview_url)
-            return
         }
-
-        const hash = window.location.hash
-        let token = window.sessionStorage.getItem("token")
-
-        if (hash) {
-            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
-
-            window.location.hash = ""
-            window.sessionStorage.setItem("token", token)
-        }
-
-        console.log(token)
-        setToken(token)
-        getPreview()
 
     },)
 

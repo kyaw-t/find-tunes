@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Text, Button, RangeSlider, Group, useMantineTheme, Card } from '@mantine/core';
-import { useForm } from '@mantine/form';
-import { ListSearch } from 'tabler-icons-react';
+
 import './../App.css'
 
 export default function FeatureSliders(props){

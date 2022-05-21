@@ -58,7 +58,7 @@ export default function SearchTrack(props){
             method: 'GET',
             dataType: 'json',
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${props.token}`
             }
             })
             .then(r => r.json())

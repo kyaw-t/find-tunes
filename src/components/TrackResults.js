@@ -14,19 +14,21 @@ export default function TrackResults(props){
         <div className="scrollA" style={{
             paddingTop:"0.2rem",
             paddingBottom:"0.2rem",
-            width:"100%"
+            width:"100%",
+            height: "100%"
             }}>
             
         
         <ScrollArea 
         transition="slide-down" transitionDuration={300} transitionTimingFunction="ease"
-        style={{ height: props.height }}>
+        style={{ height: props.height, width:"100%" }}>
 
             {props.tracks.map(t => {
                 return (
                     <Track 
                         track={t}
                         callback={cbSeed}
+                        token={props.token}
                     />
                 )
             })}

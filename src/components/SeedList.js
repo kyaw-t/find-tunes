@@ -19,7 +19,7 @@ export default function SeedList(props){
             <Text className="subtitle"> Seeds: </Text>
             {(props.seeds).map(seed => {
                 return (
-                    <Seed track={seed} callback={cbRemoveSeed}/>
+                    <Seed track={seed} callback={cbRemoveSeed} token={props.token}/>
                 )
             })}
         </Group>
