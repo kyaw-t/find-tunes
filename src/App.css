@@ -1,38 +1,107 @@
 .App {
-  text-align: center;
+    text-align: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.App-bg{
+
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(8, 8, 8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-col {
+    /* font: "Helvetica", "Arial", sans-serif; */
+    width: 90%;
+    height: inherit;
+    color:white;
+    background-color: rgb(27, 28, 27);
+    background-image: linear-gradient(
+        180deg, rgb(27, 28, 27), rgb(8, 8, 8)
+    );
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: xx-large;
 }
 
-.App-link {
-  color: #61dafb;
+.subtitle{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: x-large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text{
+    padding-top: 0.4rem;
+    color: gainsboro;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+.search{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: gainsboro;
+    font-size: large;
+    width: 100%;
+}
+
+.search-bar{
+    background-color: black;
+}
+
+.scroll{
+    padding-top: 1rem;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scrollA{
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: transparent;
+}
+
+.track-img{
+    width:3.5rem;
+    height:3.5rem;
+}
+
+.track-text{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.seed-text{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.App-section{
+    display: flex;
+    flex-direction: column;
+    width:"80%";
+}
+
+.slider-text{
+    color: gainsboro;
+    font-family: 'Montserrat', sans-serif;
 }
