@@ -11,7 +11,8 @@ import FilterTracks from './components/FilterTracks';
 
 const CLIENT_ID = "1cf62b1f664c480eafd55d57ba23412f"
 const CLIENT_SECRET = "0e147b868881436e955241139151f3ee"
-const REDIRECT_URI = "http://localhost:3000/"
+// const REDIRECT_URI = "http://localhost:3000/"
+const REDIRECT_URI = "https://kyaw-t.github.io/spot-tempo"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
 
