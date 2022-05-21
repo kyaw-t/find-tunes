@@ -74,8 +74,8 @@ export default function Main(){
             window.location.hash = ""
             window.localStorage.setItem("token", token)
         }
-
-        setToken(token)
+        window.localStorage.setItem("token", "BQDhn-psvTyJ895qr26GvWajvE3jw5VbGbgVqPsliRfR_1uLyhcofSW7ld_89NSep4ljS2SkepPbZiF9zeAKMAoHJVhAIjRhyc7XtNpLHUn3HTpI51pJRG6mWF_75Iak_-EkKqT8wzbKQUg")
+        setToken("BQDhn-psvTyJ895qr26GvWajvE3jw5VbGbgVqPsliRfR_1uLyhcofSW7ld_89NSep4ljS2SkepPbZiF9zeAKMAoHJVhAIjRhyc7XtNpLHUn3HTpI51pJRG6mWF_75Iak_-EkKqT8wzbKQUg")
 
     }, [])
     
