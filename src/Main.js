@@ -19,6 +19,7 @@ const RESPONSE_TYPE = "token"
 
 export default function Main(){
 
+    const [token, setToken] = useState([])
     const [query, setQ] = useState([]);
     const [showR, setShowR] = useState(false)
     const [showF, setShowF] = useState(false);
@@ -63,24 +64,20 @@ export default function Main(){
 
     }
 
-    // useEffect(() => {
-    //     // return
-    //     fetch(('https://accounts.spotify.com/api/token'), {
-    //         method: 'POST',
-    //         dataType: 'json',
-    //         headers: {
-    //             Authorization: `Basic  +${CLIENT_ID}:${CLIENT_SECRET}`
-    //         },
-    //         form: {
-    //             grant_type: 'client_credentials'
-    //         },
-    //     })
-    //         .then(r => r.json())
-    //         .then(r => {
-    //             console.log(r)
-    //         })
-    //         .catch(err => console.log(err))
-    // }, [])
+    useEffect(() => {
+        const hash = window.location.hash
+        let token = window.localStorage.getItem("token")
+
+        if (hash) {
+            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+
+            window.location.hash = ""
+            window.localStorage.setItem("token", token)
+        }
+
+        setToken(token)
+
+    }, [])
     
     return(
         <div className='App-col'>
