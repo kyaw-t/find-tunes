@@ -66,16 +66,16 @@ export default function Main(){
 
     useEffect(() => {
         const hash = window.location.hash
-        let token = window.localStorage.getItem("token")
+        let token = window.sessionStorage.getItem("token")
 
         if (hash) {
             token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
 
             window.location.hash = ""
-            window.localStorage.setItem("token", token)
+            window.sessionStorage.setItem("token", token)
         }
-        window.localStorage.setItem("token", "BQDhn-psvTyJ895qr26GvWajvE3jw5VbGbgVqPsliRfR_1uLyhcofSW7ld_89NSep4ljS2SkepPbZiF9zeAKMAoHJVhAIjRhyc7XtNpLHUn3HTpI51pJRG6mWF_75Iak_-EkKqT8wzbKQUg")
-        setToken("BQDhn-psvTyJ895qr26GvWajvE3jw5VbGbgVqPsliRfR_1uLyhcofSW7ld_89NSep4ljS2SkepPbZiF9zeAKMAoHJVhAIjRhyc7XtNpLHUn3HTpI51pJRG6mWF_75Iak_-EkKqT8wzbKQUg")
+
+        setToken(token)
 
     }, [])
     
