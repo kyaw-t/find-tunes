@@ -14,11 +14,11 @@ export default function FilterTracks(props){
     const cbFilterTrack = (query) => {
         console.log(query)
         console.log(props.seeds)
-        searchFilters(query)
+        getGenre(query)
 
     }
 
-    function getGenre(){
+    function getGenre(query){
         if (props.seeds.length === 0){
             return
         }
@@ -32,29 +32,25 @@ export default function FilterTracks(props){
             .then(r => r.json())
             .then(r => {
                 setGenre(r.genres)
+                searchFilters(query, r.genres[0])
             })
             .catch(err => console.log(err))
     }
 
-    function searchFilters(query){
+    function searchFilters(query, gen){
 
         var tracks = props.seeds[0].id
         var artists = props.seeds[0].artists[0].id
-        var gen = ""
 
         for (let i = 1; i < props.seeds.length; i++) {
             tracks = tracks + "," + props.seeds[i].id;
         }
 
-        if (props.seeds.length === 1){
-            gen = genre[0] + "," + genre[1]
-        }else{
-            gen = genre[0]
-        }
         if (props.seeds.length == 2){
             artists = artists + "," + 
             props.seeds[1].artists[0].id
         }   
+
         console.log("done parsing in filter")
         fetch(('https://api.spotify.com/v1/recommendations?' + new URLSearchParams({
             seed_artists: artists,
@@ -103,7 +99,7 @@ export default function FilterTracks(props){
         }
 
         setToken(token)
-        getGenre()
+        // getGenre()
 
     }, [props.seeds])
 
