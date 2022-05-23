@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/beatify/static/css/main.2778bc9e.css",
-    "main.js": "/beatify/static/js/main.0c402d0e.js",
+    "main.js": "/beatify/static/js/main.2976af76.js",
     "index.html": "/beatify/index.html",
     "main.2778bc9e.css.map": "/beatify/static/css/main.2778bc9e.css.map",
-    "main.0c402d0e.js.map": "/beatify/static/js/main.0c402d0e.js.map"
+    "main.2976af76.js.map": "/beatify/static/js/main.2976af76.js.map"
   },
   "entrypoints": [
     "static/css/main.2778bc9e.css",
-    "static/js/main.0c402d0e.js"
+    "static/js/main.2976af76.js"
   ]
 }
