@@ -100,7 +100,7 @@ export default function FilterTracks(props){
 
     return(
         <>
-            <div style={{width:"20%", height:"500px"}}>
+            <div style={{width:"20%", minWidth:"200px"}}>
                 <FeatureSliders callback={cbFilterTrack}/>
             </div>
         </>

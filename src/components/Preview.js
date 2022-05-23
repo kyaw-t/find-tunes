@@ -11,7 +11,12 @@ export default function Preview(props){
         <ReactAudioPlayer
             src={props.preview}
             controls
-            // style={{ padding: '0', height: '0px', width: '140px' }}
+            style={{ 
+                padding: '0', 
+                height: (props.size === "small" && "0px"),
+                width: (props.size === "small" && "50px"),
+             }}
+            className="small-player"
         />}
         </>
     );

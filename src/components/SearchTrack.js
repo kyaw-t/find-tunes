@@ -3,12 +3,13 @@ import { Text, Button, TextInput, Group } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ListSearch } from 'tabler-icons-react';
 import './../App.css'
+import { useViewportSize } from '@mantine/hooks';
+
 
 
 export default function SearchTrack(props){
 
-    const [token, setToken] = useState()
-
+    const {height, width} = useViewportSize();
     const form = useForm({
         initialValues: {
             track: '',
@@ -74,46 +75,31 @@ export default function SearchTrack(props){
             .catch(err => console.log(err))
     }
 
-    useEffect(() => {
-        const hash = window.location.hash
-        let token = window.sessionStorage.getItem("token")
-
-        if (hash) {
-            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
-
-            window.location.hash = ""
-            window.sessionStorage.setItem("token", token)
-        }
-        console.log(token)
-        setToken(token)
-
-    }, [])
 
     return(
         <>
-        {/* <Text className='title'>Seed Songs</Text> */}
-
         <div className='search'>
 
             <form onSubmit={form.onSubmit((values) => console.log(values))}>
 
                 <Group position="left" mt="md" b>
                 <>
-                <Text>Track:</Text>
+                {width > 700 && <Text>Track:</Text>}
                 <TextInput
                     placeholder='Track Name'
                     size="sm"
-                    style={{width:"30%"}}
+                    style={{width:"35%"}}
                     {...form.getInputProps('track')}
                 />
                 </>
 
                 <>
-                <Text>Artist:</Text>
+                {width > 700 && <Text>Artist:</Text>}
+
                 <TextInput
                     placeholder='Artist Name'
                     size="sm"
-                    style={{width:"30%"}}
+                    style={{width:"35%"}}
                     {...form.getInputProps('artist')}
                 />
                 </>
@@ -125,7 +111,6 @@ export default function SearchTrack(props){
                     style={{paddingLeft:"0"}}
                     onClick={() => {handleClick()}}>
                     <ListSearch size={32} strokeWidth={2} color={'#1DB954'}/>
-                    {/* Search */}
                 </Button>
 
                 </Group>

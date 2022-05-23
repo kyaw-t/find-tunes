@@ -6,9 +6,12 @@ import TrackResults from './components/TrackResults';
 import { X } from 'tabler-icons-react';
 import SeedList from './components/SeedList';
 import FilterTracks from './components/FilterTracks';
+import { useViewportSize } from '@mantine/hooks';
+import Logo from './components/Logo';
 
 export default function Main(){
 
+    const {height, width} = useViewportSize();
     const [token, setToken] = useState([])
     const [query, setQ] = useState([]);
     const [showR, setShowR] = useState(false)
@@ -18,6 +21,7 @@ export default function Main(){
     const [fresults, setFResults] = useState([]);
     const [showQ, setShowQ] = useState(false)
 
+    
     const cbSearchTrack = (data) => { 
         setResults(data);
         setShowR(true)
@@ -69,7 +73,10 @@ export default function Main(){
 
 
     return(
-        <div className='App-col'>
+        <div className='App-col' style={{width:(width < 900 && "100%" )  }}>
+            {/* {width} */}
+            {/* <Logo/> */}
+
             <SearchTrack callback={cbSearchTrack} token={token}/>
             <div className={'scroll'}> 
                 { showR &&
@@ -78,11 +85,7 @@ export default function Main(){
                             <Button 
                                 onClick={()=> {setShowR(false)}}
                                 variant="subtle" color="dark"
-                                style={{
-                                    marginTop:"-1rem",
-                                    marginBottom:"-1rem",
-                                    zIndex:"100"
-                                }}
+                                className='close'
                             >
                                 <X/>
                             </Button>
@@ -91,30 +94,35 @@ export default function Main(){
                     </>
                 }
             </div>
+            
             {seeds.length != 0 && <SeedList seeds={seeds} callback={cbRemoveSeed} token={token}/>}
             <br/>
+
             <Group position='center'>
 
             </Group>
             {
                     showQ &&
-                    <div style={{display:"flex"}}>
+                    <div style={{
+                        display:"flex", 
+                        flexDirection:(width < 600 && "column" )
+                    }}>
                     <FilterTracks seeds={seeds} callback={cbFilterTrack} token={token}/>
                         { showF &&
-                            <div  className='scroll' style={{width:"75%", marginTop:"-25px"}}>
+                            <div  className='scroll' style={{
+                                width:(width > 600 && "75%"), 
+                                marginTop:(width > 600 && "-25px"),
+                                }}>
                                 <Group position="right" style={{width:"100%"}}>
                                     <Button 
                                         onClick={()=> {setShowF(false)}}
                                         variant="subtle" color="dark"
-                                        style={{
-                                            marginTop:"-1rem",
-                                            marginBottom:"-1rem",
-                                            zIndex:"100"
-                                        }}
+                                        className='close'
                                     >
                                         <X/>
                                     </Button>
                                 </Group>
+
                                 {fresults.length == 0 ?
                                     <Text className="text">No Results Found..</Text>
                                     :
