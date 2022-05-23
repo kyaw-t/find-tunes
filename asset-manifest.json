@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/beatify/static/css/main.2778bc9e.css",
-    "main.js": "/beatify/static/js/main.2976af76.js",
-    "index.html": "/beatify/index.html",
-    "main.2778bc9e.css.map": "/beatify/static/css/main.2778bc9e.css.map",
-    "main.2976af76.js.map": "/beatify/static/js/main.2976af76.js.map"
+    "main.css": "/tuneify/static/css/main.40eeb390.css",
+    "main.js": "/tuneify/static/js/main.fb199c17.js",
+    "index.html": "/tuneify/index.html",
+    "main.40eeb390.css.map": "/tuneify/static/css/main.40eeb390.css.map",
+    "main.fb199c17.js.map": "/tuneify/static/js/main.fb199c17.js.map"
   },
   "entrypoints": [
-    "static/css/main.2778bc9e.css",
-    "static/js/main.2976af76.js"
+    "static/css/main.40eeb390.css",
+    "static/js/main.fb199c17.js"
   ]
 }
