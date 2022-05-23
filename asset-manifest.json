@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/tuneify/static/css/main.8322189c.css",
-    "main.js": "/tuneify/static/js/main.4a3b1422.js",
+    "main.css": "/tuneify/static/css/main.cbf34712.css",
+    "main.js": "/tuneify/static/js/main.0d0d54aa.js",
     "index.html": "/tuneify/index.html",
-    "main.8322189c.css.map": "/tuneify/static/css/main.8322189c.css.map",
-    "main.4a3b1422.js.map": "/tuneify/static/js/main.4a3b1422.js.map"
+    "main.cbf34712.css.map": "/tuneify/static/css/main.cbf34712.css.map",
+    "main.0d0d54aa.js.map": "/tuneify/static/js/main.0d0d54aa.js.map"
   },
   "entrypoints": [
-    "static/css/main.8322189c.css",
-    "static/js/main.4a3b1422.js"
+    "static/css/main.cbf34712.css",
+    "static/js/main.0d0d54aa.js"
   ]
 }
