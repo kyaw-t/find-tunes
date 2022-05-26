@@ -1,7 +1,7 @@
 {
   "name": "tempo",
   "version": "0.1.0",
-  "homepage": "https://kyaw-t.github.io/tuneify",
+  "homepage": "https://kyaw-t.github.io/find-tunes",
   "private": true,
   "dependencies": {
     "@mantine/core": "^4.2.5",

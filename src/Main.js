@@ -75,7 +75,7 @@ export default function Main(){
     return(
         <div className='App-col' style={{width:(width < 900 && "100%" )  }}>
             {/* {width} */}
-            {/* <Logo/> */}
+            <Logo/>
 
             <SearchTrack callback={cbSearchTrack} token={token}/>
             <div className={'scroll'}> 
