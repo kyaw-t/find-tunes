@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/tuneify/static/css/main.cbf34712.css",
-    "main.js": "/tuneify/static/js/main.0d0d54aa.js",
-    "index.html": "/tuneify/index.html",
-    "main.cbf34712.css.map": "/tuneify/static/css/main.cbf34712.css.map",
-    "main.0d0d54aa.js.map": "/tuneify/static/js/main.0d0d54aa.js.map"
+    "main.css": "/find-tunes/static/css/main.f6e4a667.css",
+    "main.js": "/find-tunes/static/js/main.37dba14f.js",
+    "static/media/Spotify_Logo_RGB_Green.png": "/find-tunes/static/media/Spotify_Logo_RGB_Green.0c4ae91bae23217d39c9.png",
+    "index.html": "/find-tunes/index.html",
+    "main.f6e4a667.css.map": "/find-tunes/static/css/main.f6e4a667.css.map",
+    "main.37dba14f.js.map": "/find-tunes/static/js/main.37dba14f.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbf34712.css",
-    "static/js/main.0d0d54aa.js"
+    "static/css/main.f6e4a667.css",
+    "static/js/main.37dba14f.js"
   ]
 }
